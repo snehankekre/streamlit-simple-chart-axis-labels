@@ -69,45 +69,86 @@ with st.expander("Context :books:"):
 
 chart_data = load_data()
 
+title_x = st.text_input(label="Enter the x-axis title", value="This is the x-axis title", help="This is the x-axis title that will be displayed below the x-axis.")
+title_y = st.text_input(label="Enter the y-axis title", value="This is the y-axis title", help="This is the y-axis title that will be displayed to the left of the y-axis.")
+
 tab1, tab2, tab3, tab4 = st.tabs(["Line Chart", "Area Chart", "Bar Chart", "Scatter Chart"])
 
 with tab1:
-    with st.echo(code_location="below"):
-        st.line_chart(
-            chart_data,
-            x="a",
-            y="b",
-            use_container_width=True,
-            title_x="This is the x-axis title",
-            title_y="This is the y-axis title",
-        )
+    st.line_chart(
+        chart_data,
+        x="a",
+        y="b",
+        use_container_width=True,
+        title_x=title_x,
+        title_y=title_y,
+    )
+    st.code(
+    """
+    st.line_chart(
+        chart_data,
+        x="a",
+        y="b",
+        use_container_width=True,
+        title_x="This is the x-axis title",
+        title_y="This is the y-axis title",
+    )
+    """
+    )
 
 with tab2:
-    with st.echo(code_location="below"):
-        st.area_chart(
-            chart_data,
-            use_container_width=True,
-            title_x="This is the x-axis title",
-            title_y="This is the y-axis title",
-        )
+    st.area_chart(
+        chart_data,
+        use_container_width=True,
+        title_x=title_x,
+        title_y=title_y,
+    )
+    st.code(
+    """
+    st.area_chart(
+        chart_data,
+        use_container_width=True,
+        title_x="This is the x-axis title",
+        title_y="This is the y-axis title",
+    )
+    """
+    )
 
 with tab3:
-    with st.echo(code_location="below"):
-        st.bar_chart(
-            chart_data,
-            use_container_width=True,
-            title_x="This is the x-axis title",
-            title_y="This is the y-axis title",
-        )
+    st.bar_chart(
+        chart_data,
+        use_container_width=True,
+        title_x=title_x,
+        title_y=title_y,
+    )
 
+    st.code(
+    """
+    st.bar_chart(
+        chart_data,
+        use_container_width=True,
+        title_x="This is the x-axis title",
+        title_y="This is the y-axis title",
+    )
+    """
+    )
 with tab4:
-    with st.echo(code_location="below"):
-        st.scatter_chart(
-            chart_data,
-            use_container_width=True,
-            title_x="This is the x-axis title",
-            title_y="This is the y-axis title",
-        )
+    st.scatter_chart(
+        chart_data,
+        use_container_width=True,
+        title_x=title_x,
+        title_y=title_y,
+    )
+    st.code(
+    """
+    st.scatter_chart(
+        chart_data,
+        use_container_width=True,
+        title_x="This is the x-axis title",
+        title_y="This is the y-axis title",
+    )
+    """
+    )
 
 
 
